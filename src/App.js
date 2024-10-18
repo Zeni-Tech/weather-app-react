@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState,useEffect } from 'react'
+import './App.css'
 
 function WeatherAPI() {
   const [city,setCity]=useState(null)
