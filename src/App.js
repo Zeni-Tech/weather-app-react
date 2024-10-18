@@ -1,5 +1,5 @@
 import './App.css';
-
+import { useState,useEffect } from 'react';
 function App() {
    const [city,setCity]=useState(null)
   const [search,setSearch]=useState("")
