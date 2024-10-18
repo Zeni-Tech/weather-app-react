@@ -1,7 +1,8 @@
-import './App.css';
-import { useState,useEffect } from 'react';
-function App() {
-   const [city,setCity]=useState(null)
+import React from 'react'
+import { useState,useEffect } from 'react'
+
+function WeatherAPI() {
+  const [city,setCity]=useState(null)
   const [search,setSearch]=useState("")
 
 
@@ -16,7 +17,7 @@ function App() {
     fetchApi()
   },[search]) 
   return (
-    <center>
+        <center>
     <div className='container'>
        <div className='Main'>
             <div className='input'>
@@ -24,14 +25,14 @@ function App() {
              </div>
     {
       !city?(
-        <p className='NDF'>No Data Found</p>
+        <p className='NDF'><i className="fa-solid fa-bug"></i> No Data Found <i className="fa-solid fa-bug"></i></p>
       )
       :
       (
         <div className='Data'>
             <div className='cityName'>
         <h1><i className="fa-solid fa-temperature-half"></i> {search}</h1>
-            </div>
+            </div> 
             <div className='Cel'>
         <h2>{city.temp}°<i className="fa-solid fa-c"></i></h2>
             </div>
@@ -39,7 +40,7 @@ function App() {
             <h3>Humidity : {city.humidity} <i className="fa-solid fa-percent"></i></h3>
             </div>
             <div className='minmax'>
-        <h3>Min: {city.temp_min}°Celsius | Max: {city.temp_max}°Celsius</h3> 
+        <h3>Min: {city.temp_min}°Celsius || Max: {city.temp_max}°Celsius</h3> 
             </div>
         </div>
       )
@@ -48,7 +49,10 @@ function App() {
     </div>
     </div>
     </center> 
-  );
+ 
+  )
 }
 
-export default App;
+export default WeatherAPI
+
+
